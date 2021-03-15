@@ -19,9 +19,8 @@
 
             <!-- form start -->
             <div class="">
-                <form action="#" method="POST">
-                    <div class="border-4 m-4 rounded">
-                        <div class="">
+                <form action="#" method="POST" id="create-comic-form">
+                    <div class="border-4 m-4 rounded p-2">
                             <h3>New Comic!</h3>
                             <div class="">
                                 <div class="">
@@ -33,7 +32,7 @@
                                     </div>
                                 </div>
                             </div>
-                
+
                             <div>
                             <label for="comic_desc" class="text-primary">
                                 Description
@@ -42,7 +41,23 @@
                                 <textarea id="comic_desc" name="comic_desc" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Brief description of the new comic."></textarea>
                             </div>
                             </div>
-                            
+                            <!-- categories start -->
+                            <div class="shadow-sm">
+                                <label for="categories">
+                                    Category
+                                </label>
+                                <select id="categories" name="categories">
+                                    <option value="1">Humor</option>
+                                    <option value="2">Scary</option>
+                                    <option value="3">Romance</option>
+                                    <option value="4">Slice of Life</option>
+                                    <option value="5">Animal</option>
+                                    <option value="6">Cute</option>
+                                    <option value="7">Action</option>
+                                    <option value="8">Mystery</option>
+                                </select>
+                            </div>
+                            <!-- categories end -->
                             <div class="grid grid-cols-3 gap-6">
                                 <div class="col-span-3 sm:col-span-2">
                                 <label for="comic_img" class="text-primary">
@@ -57,12 +72,11 @@
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="">
-                            <button type="submit" class="">
-                            Save
-                            </button>
-                        </div>
+                            <div class="">
+                                <button type="submit" class="">
+                                Save
+                                </button>
+                            </div>
                     </div>
                 </form>
             </div>
