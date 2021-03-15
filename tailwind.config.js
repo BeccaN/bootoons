@@ -4,11 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#272838', 
-        secondary: {
-          100: '#F3DE8A',
-          200: '#E8C021',
-        }
+        main: '#FFFDF3', 
+        accent: '#FEB098',
+        pop: '#ED4F3F',
+        ground: '#182335'
       },
       fontFamily: {
         body: ['Gochi Hand']
