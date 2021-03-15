@@ -11,19 +11,76 @@
     <div id="app" class="h-screen flex">
         <!-- Fixed sidebar -->
         <div class="bg-ground w-40 sm:w-64">
-              <h1 class="p-4 text-main text-5xl text-center font-body">BOOTOONS</h1>
+            <!-- logo/title -->
+            <h1 class="p-4 text-main text-5xl text-center font-body">bootoons</h1>
+            <!-- random comic button -->
+            <div class="m-4 bg-accent p-2 text-center rounded font-bold text-2xl text-ground shadow font-mono">
+                <h1>random comic</h1>
+            </div>
+            <!-- about site -->
+            <div class="bg-main text-center m-4 p-2 rounded text-ground shadow font-mono">
+                <h1 class="font-bold text-pop">about:</h1>
+                <p class="text-sm">bootoons is a comic sharing application where users can peruse, upload and become inspired by other comic artists.</p>
+            </div>
+            <!-- category filter -->
+            <div class="m-4 bg-accent p-2 text-center rounded font-bold text-2xl text-ground shadow font-mono">
+                <h1>category filter</h1>
+            </div>
+            <!-- form start -->
+            <form action="#" method="POST" id="create-comic-form">
+                <div class="bg-pop m-4 rounded p-2 font-mono shadow">
+                        <h3 class="text-center text-2xl font-bold text-accent">+ new comic +</h3>
+                        <!-- title -->
+                        <div class="mt-2">
+                            <input type="text" name="comic_title" id="comic_title" class="bg-ground focus:ring-accent block w-full h-6 text-sm p-1 rounded placeholder-main" placeholder="title">
+                        </div>
+                        <!-- description -->
+                        <div class="mt-2">
+                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accentblock w-full text-sm rounded placeholder-main p-1" placeholder="description of comic..."></textarea>
+                        </div>
+                        <!-- categories -->
+                        <select id="categories" name="categories" class="bg-ground text-main p-1 rounded w-full text-sm">
+                            <option value="" disabled selected>categories</option>
+                            <option value="1">humor</option>
+                            <option value="2">scary</option>
+                            <option value="3">romance</option>
+                            <option value="4">slice of life</option>
+                            <option value="5">animal</option>
+                            <option value="6">cute</option>
+                            <option value="7">action</option>
+                            <option value="8">mystery</option>
+                        </select>
+                        <!-- image -->
+                        <div class="mt-2">
+                            <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-main" placeholder="www.urlofnewcomic.com">
+                        </div>
+                        
+                        <div class="">
+                            <button type="submit" class="bg-accent mt-2 w-full text-center rounded font-bold text-2xl text-ground font-mono">
+                            save
+                            </button>
+                        </div>
+                </div>
+            </form>
+            
+            <!-- form end -->
         </div>
         <!-- Scroll wrapper -->
         <div class="flex-1 flex bg-main overflow-hidden">
             <!-- Fixed container -->
-            <div class="px-6 py-4 flex-1">
+            <div class="px-6 py-2 flex-1">
                 <!-- Comic More Info -->
-                <div id="comic-more" class="p-8 shadow text-center rounded-lg my-10 bg-white" v-for="i in 50">
-                testing
+                <div id="comic-more" class="shadow text-center rounded my-10 overflow-hidden" v-for="i in 50">
+                    <img src="https://comicyears.com/wp-content/uploads/2019/12/seaostars.jpg" class="object-cover">
+                </div>
+                <div id="comic-more" class="p-2 shadow rounded bg-accent">
+                    <h1 class="text-center font-bold text-xl text-ground font-mono">"testing title"</h1>
+                    <h2 class="text-xs text-ground font-mono">category</h2>
+                    <p class="mt-2 text-xs text-ground bg-main p-1 rounded font-mono">testing a comic description that hopefully will span two or more lines...</p>
                 </div>
             </div>
             <!-- Scrollable container -->
-            <div id="comic-container" class="px-6 py-4 flex-1 overflow-y-scroll grid grid-cols-2">
+            <div id="comic-container" class="px-6 py-6 flex-1 overflow-y-scroll grid grid-cols-2">
                 <!-- All Comics -->
                 <div class="relative m-5">
                     <div class="bg-main rounded overflow-hidden shadow">
