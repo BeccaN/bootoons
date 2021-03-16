@@ -4,32 +4,35 @@ const rootEl = document.getElementById("root")
 const comicCon = document.getElementById("comic-container")
 const createComicForm = document.getElementById("create-comic-form")
 
-// Loading Page w/ Comics
+// --DOM Loaded Fetch-- //
 document.addEventListener('DOMContentLoaded', () => {
     fetch(mainUrl + "comics")
         .then ((res) => res.json())
-        .then ((data) => renderComics(data))
-    //Add submit event listener to 'New Comic Form'
-    createComicForm.addEventListener("submit", (e) => 
-    createFormHandler(e))
+        .then ((data) => {
+            data.forEach(comic => {
+                renderComic(comic)
+            })
+        })
+    // --Add submit event listener to 'New Comic Form'
+    createComicForm.addEventListener("submit", (e) => createFormHandler(e))
+    // --Add 'more comic info' event listener
+
 })
-//Function on how to render each comic
-const renderComics = function (comics) {
-    // Change BADGE to a heart icon
-    comics.forEach((comic) => {
-        comicCon.innerHTML += `
-        <div class="relative m-5">
-            <div class="bg-main rounded overflow-hidden shadow">
-                <img src="${comic.img_url}" class="w-full h-72 object-cover">
-                <div>
-                    <span class="bg-gray-300 text-xs uppercase font-bold rounded absolute top-0 ml-1 mt-2">BADGE</span> 
-                </div>
+// --Render Comic Function-- //
+const renderComic = function (comic) {
+    // ##Change BADGE to a heart icon
+    comicCon.innerHTML += `
+    <div class="relative m-5">
+        <div class="bg-main rounded overflow-hidden shadow">
+            <img src="${comic.img_url}" class="w-full h-72 object-cover">
+            <div>
+                <span class="bg-gray-300 text-xs uppercase font-bold rounded absolute top-0 ml-1 mt-2">BADGE</span> 
             </div>
         </div>
-        `
-    })
+    </div>
+    `
 }
-// Function that handles the data submitted in the 'New Comic Form' and how its being POSTed
+// --Form Handler Function For Post Fetch-- //
 const createFormHandler = function (e) {
     e.preventDefault()
     const titleInput = e.target.comic_title.value
@@ -38,7 +41,7 @@ const createFormHandler = function (e) {
     const categoryId = parseInt(e.target.categories.value)
     postFetch(titleInput, descInput, imageInput, categoryId)
 }
-// Post fetch function on 'New Comic Form' 
+// --New Comic Post Fetch Function-- //
 const postFetch = function (title, description, img_url, category_id) {
     const comicData = {title, description, img_url, category_id}
     
@@ -48,26 +51,11 @@ const postFetch = function (title, description, img_url, category_id) {
         body: JSON.stringify(comicData)
     })
     .then(resp => resp.json())
-    // .then(data => {
-    //     const newComicMarkup = `
-    //     <div class="m-2">
-    //         <div class="relative">
-    //             <div class="bg-white w-full border-4 rounded overflow-hidden shadow">
-    //                 <img src="${data.img_url}" class="w-full">
-    //                 <h1 class="flex justify-center">Title: ${data.title}</h1>
-    //                 <h2>Category: ${data.comic_category}</h2>
-    //                 <div>
-    //                     <span class="bg-gray-300 text-xs uppercase font-bold rounded absolute top-0 ml-1 mt-2">BADGE</span> 
-    //                 </div>
-    //             </div>
-    //         </div
-    //     </div>
-    //     `
-    //     comicCon.innerHTML += newComicMarkup
-    // })
-    .then(location.reload())
+    .then(comic => renderComic(comic))
+    
+
 }
-// 'More Comic Details' function 
+// --'More Comic Details' function 
 comicCon.addEventListener("click", e => {
     console.log(e.target)
 })

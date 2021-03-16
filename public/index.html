@@ -32,11 +32,11 @@
                         <h3 class="text-center text-2xl font-bold text-accent">+ new comic +</h3>
                         <!-- title -->
                         <div class="mt-2">
-                            <input type="text" name="comic_title" id="comic_title" class="bg-ground focus:ring-accent block w-full h-6 text-sm p-1 rounded placeholder-main" placeholder="title">
+                            <input type="text" name="comic_title" id="comic_title" class="bg-ground focus:ring-accent block w-full h-6 text-sm p-1 rounded placeholder-main text-main" placeholder="title">
                         </div>
                         <!-- description -->
                         <div class="mt-2">
-                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accentblock w-full text-sm rounded placeholder-main p-1" placeholder="description of comic..."></textarea>
+                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accentblock w-full text-sm rounded placeholder-main p-1 text-main" placeholder="description of comic..."></textarea>
                         </div>
                         <!-- categories -->
                         <select id="categories" name="categories" class="bg-ground text-main p-1 rounded w-full text-sm">
@@ -52,7 +52,7 @@
                         </select>
                         <!-- image -->
                         <div class="mt-2">
-                            <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-main" placeholder="www.urlofnewcomic.com">
+                            <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-main text-main" placeholder="www.urlofnewcomic.com">
                         </div>
                         
                         <div class="">
@@ -70,34 +70,18 @@
             <!-- Fixed container -->
             <div class="px-6 py-2 flex-1">
                 <!-- Comic More Info -->
-                <div id="comic-more" class="shadow text-center rounded my-10 overflow-hidden" v-for="i in 50">
+                <div id="comic-more-img" class="shadow text-center rounded my-10 overflow-hidden" v-for="i in 50">
                     <img src="https://comicyears.com/wp-content/uploads/2019/12/seaostars.jpg" class="object-cover">
                 </div>
-                <div id="comic-more" class="p-2 shadow rounded bg-accent">
-                    <h1 class="text-center font-bold text-xl text-ground font-mono">"testing title"</h1>
-                    <h2 class="text-xs text-ground font-mono">category</h2>
-                    <p class="mt-2 text-xs text-ground bg-main p-1 rounded font-mono">testing a comic description that hopefully will span two or more lines...</p>
+                <div id="comic-more-info" class="p-2 shadow rounded bg-accent">
+                    <h1 id="comic-more-title" class="text-center font-bold text-xl text-ground font-mono">"testing title"</h1>
+                    <h2 id="comic-more-cat" class="text-xs text-ground font-mono">category</h2>
+                    <p id="comic-more-desc" class="mt-2 text-xs text-ground bg-main p-1 rounded font-mono">testing a comic description that hopefully will span two or more lines...</p>
                 </div>
             </div>
             <!-- Scrollable container -->
             <div id="comic-container" class="px-6 py-6 flex-1 overflow-y-scroll grid grid-cols-2">
                 <!-- All Comics -->
-                <div class="relative m-5">
-                    <div class="bg-main rounded overflow-hidden shadow">
-                        <img src="https://comicyears.com/wp-content/uploads/2019/12/seaostars.jpg" class="w-full h-72 object-cover">
-                        <div>
-                            <span class="bg-gray-300 text-xs uppercase font-bold rounded absolute top-0 ml-1 mt-2">BADGE</span> 
-                        </div>
-                    </div>
-                </div>
-                <div class="relative m-5">
-                    <div class="bg-main rounded overflow-hidden shadow">
-                        <img src="https://images.squarespace-cdn.com/content/v1/593f201de3df288fc6465e6f/1535235332272-T6QVPFHNDQ8BKTINM5UR/ke17ZwdGBToddI8pDm48kIEQO4sFKKqxDLUIsx74TTxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpw3-YQcDgmmdInd1BiG54Ch9za7QqIeGJCiOAGS_zIOlQEMW8luN_Jcya5CVDJzyrI/saga_004_cover.jpg" class="w-full h-72 object-cover">
-                        <div>
-                            <span class="bg-gray-300 text-xs uppercase font-bold rounded absolute top-0 ml-1 mt-2">BADGE</span> 
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
