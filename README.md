@@ -1,11 +1,11 @@
 * link to backend api
 * run rails migrate and rails seed
 
-
 to do/stretch:
 * watch OO JS video pt 4
 * create 'selected comic' event
 * create a 'random comic button'
+* error display/validations
 * make categories creatable too
 * create category search/filter
   - implement post OO JS

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --Add submit event listener to 'New Comic Form'
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
     // --Add 'more comic info' event listener
-
 })
 // --Render Comic Function-- //
 const renderComic = function (comic) {
@@ -51,9 +50,12 @@ const postFetch = function (title, description, img_url, category_id) {
         body: JSON.stringify(comicData)
     })
     .then(resp => resp.json())
-    .then(comic => renderComic(comic))
+    // .catch (err => console.log(err))
+    .then(comic => {
+        console.log(comic.error)
+        renderComic(comic)
+    })
     
-
 }
 // --'More Comic Details' function 
 comicCon.addEventListener("click", e => {
