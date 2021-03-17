@@ -14,8 +14,10 @@
             <!-- logo/title -->
             <h1 class="p-4 text-main text-5xl text-center font-body">bootoons</h1>
             <!-- random comic button -->
-            <div class="m-4 bg-accent p-2 text-center rounded font-bold text-2xl text-ground shadow font-mono">
-                <h1>random comic</h1>
+            <div class="m-4">
+                <button class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
+                    random comic
+                </button>
             </div>
             <!-- about site -->
             <div class="bg-main text-center m-4 p-2 rounded text-ground shadow font-mono">
@@ -23,8 +25,8 @@
                 <p class="text-sm">bootoons is a comic sharing application where users can peruse, upload and become inspired by other comic artists.</p>
             </div>
             <!-- category filter -->
-            <div class="m-4 bg-accent p-2 text-center rounded font-bold text-2xl text-ground shadow font-mono">
-                <h1>category filter</h1>
+            <div class="m-4">
+                <input class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground" placeholder="category filter">
             </div>
             <!-- form start -->
             <form action="#" method="POST" id="create-comic-form">
@@ -36,7 +38,7 @@
                         </div>
                         <!-- description -->
                         <div class="mt-2">
-                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accentblock w-full text-sm rounded placeholder-main p-1 text-main" placeholder="description of comic..."></textarea>
+                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accent w-full text-sm rounded placeholder-main p-1 text-main" placeholder="description of comic..."></textarea>
                         </div>
                         <!-- categories -->
                         <select id="categories" name="categories" class="bg-ground text-main p-1 rounded w-full text-sm">
@@ -54,12 +56,10 @@
                         <div class="mt-2">
                             <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-main text-main" placeholder="www.urlofnewcomic.com">
                         </div>
-                        
-                        <div class="">
-                            <button type="submit" class="bg-accent mt-2 w-full text-center rounded font-bold text-2xl text-ground font-mono">
-                            save
-                            </button>
-                        </div>
+                        <!-- submit -->
+                        <button type="submit" class="bg-accent mt-2 w-full text-center rounded font-bold text-2xl text-ground font-mono">
+                        save
+                        </button>
                 </div>
             </form>
             
@@ -86,6 +86,8 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
+    
+    <script type="text/javascript" src="../src/comic.js"></script>
+    <script type="text/javascript" src="../src/index.js"></script>
 </body>
 </html>
