@@ -11,11 +11,12 @@
     <div id="app" class="h-screen flex">
         <!-- Fixed sidebar -->
         <div class="bg-ground w-40 sm:w-64">
+
             <!-- logo/title -->
             <h1 class="p-4 text-main text-5xl text-center font-body">bootoons</h1>
             <!-- random comic button -->
             <div class="m-4">
-                <button class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
+                <button id="random-comic-btn" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
                     random comic
                 </button>
             </div>
@@ -25,6 +26,15 @@
                 <p class="text-sm">bootoons is a comic sharing application where users can peruse, upload and become inspired by other comic artists.</p>
             </div>
             <!-- category filter -->
+            <input type="text" list="cars" />
+            <datalist id="cars">
+                <option>Volvo</option>
+                <option>Saab</option>
+                <option>Mercedes</option>
+                <option>Audi</option>
+            </datalist>
+            <input type="submit" style="display: none" />
+
             <div class="m-4">
                 <input class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground" placeholder="category filter">
             </div>
@@ -71,7 +81,7 @@
             <div class="px-6 py-2 flex-1">
                 <!-- Comic More Info -->
                 <div id="comic-more-img" class="shadow text-center rounded my-10 overflow-hidden" v-for="i in 50">
-                    <img src="https://comicyears.com/wp-content/uploads/2019/12/seaostars.jpg" class="object-cover">
+                    <!-- img tag -->
                 </div>
                 <div id="comic-more-info" class="p-2 shadow rounded bg-accent">
                     <h1 id="comic-more-title" class="text-center font-bold text-xl text-ground font-mono">"testing title"</h1>

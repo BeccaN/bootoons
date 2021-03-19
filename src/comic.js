@@ -23,18 +23,23 @@ class Comic {
   // more comic info function
   renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc) {
     moreComicImg.innerHTML = `<img src="${this.img_url}" class="object-cover">`
-    moreComicTitle.innerText = this.title
+    moreComicTitle.innerText = `"${this.title.toLowerCase()}"`
     moreComicCat.innerText = this.category
-    moreComicDesc.innerText = this.description
+    moreComicDesc.innerText = this.description.toLowerCase()
   }
 
   // category filter function
-  renderWithCatFilter() {
+  static renderWithCatFilter() {
+    Comic.renderWithCatFilter(category)
     // when user types in category into filter and hits enter => 
     // return this if this.category === what is typed into category filter
   }
 
   // return random comic static function
+  static randomComic() {
+    var randomItem = Comic.all[Math.floor(Math.random() * Comic.all.length)]
+    randomItem.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc) 
+  }
 }
 
 // all comics

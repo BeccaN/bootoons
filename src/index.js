@@ -6,6 +6,7 @@ let moreComicImg = document.getElementById("comic-more-img")
 let moreComicTitle = document.getElementById("comic-more-title")
 let moreComicCat = document.getElementById("comic-more-cat")
 let moreComicDesc = document.getElementById("comic-more-desc")
+const randomComicBtn = document.getElementById("random-comic-btn")
 
 // --DOM Loads Event Listener-- //
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --Add submit event listener to 'New Comic Form'
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
     // --Add 'category filter' event listener
+
+    // --Add 'random comic' button event listener
+    randomComicBtn.addEventListener('click', (e) => Comic.randomComic(e))
 })
 
 // --Fetch for Comics Function-- //
@@ -33,9 +37,8 @@ const getComics = function () {
                     selectComic.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc)
                 })
             })
-
         })
-
+        .then ((resp) => Comic.randomComic(resp))
 }
 
 // --Form Handler Function For Post Fetch-- //
@@ -64,7 +67,4 @@ const postFetch = function (title, description, img_url, category_id) {
         comicCon.innerHTML += newComic.renderComic(comic)
         createComicForm.reload()
     })
-    
-    
 }
-

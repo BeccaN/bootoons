@@ -2,17 +2,16 @@
 * run rails migrate and rails seed
 
 to do/stretch:
-* create a 'random comic button'
-* error display/validations
-* make categories creatable too
-* create category search/filter
-  - implement post OO JS
-  - flow: fetch for comics from db, 
-  create JS objects for each comic,
-  comics are added to comic-container
+
+* implement 'category filter' search functionality
 * comicCon contents are jumbled/random (each reload of the page, the comics are randomized)
-* first more comic info is randomly chosen
+
 * change placeholder text color to something more obvious
+* fix image fill in more comic info section
+* set max height on more comic info img
+
+* make categories creatable too
+* error display/validations
 
 Stretch:
 * make comic image an upload from computer
