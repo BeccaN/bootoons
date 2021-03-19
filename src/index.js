@@ -8,6 +8,7 @@ let moreComicCat = document.getElementById("comic-more-cat")
 let moreComicDesc = document.getElementById("comic-more-desc")
 const randomComicBtn = document.getElementById("random-comic-btn")
 const catFilter = document.getElementById("categories")
+const formErrorCon = document.getElementById("form-errors")
 
 // --DOM Loads Event Listener-- //
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +35,6 @@ const getComics = function () {
             comics.forEach(comic => {
                 let newComic = new Comic(comic)
                 comicCon.innerHTML += newComic.renderComic()
-                
             })
             // --More Info Card Listener-- //
             const comicCards = document.querySelectorAll('#comic-card')
@@ -68,10 +68,25 @@ const postFetch = function (title, description, img_url, category_id) {
         body: JSON.stringify(comicData)
     })
     .then(resp => resp.json())
-    // .catch (err => console.log(err))
+    .catch(error => {
+        console.log(error)
+    })
     .then(comic => {
-        let newComic = new Comic(comic)
-        comicCon.innerHTML += newComic.renderComic(comic)
-        createComicForm.reload()
+        console.log(comic.errors)
+        if (comic.errors) {
+            renderErrors(comic.errors)
+        }
+        else {
+            let newComic = new Comic(comic)
+            comicCon.innerHTML += newComic.renderComic(comic)
+            location.reload()
+        }
+    })
+}
+
+// --Render Errors-- //
+const renderErrors = function (errors) {
+    errors.forEach(error => {
+        formErrorCon.innerHTML += `<li>${error}</li>`
     })
 }

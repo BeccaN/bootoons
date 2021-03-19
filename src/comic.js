@@ -32,8 +32,6 @@ class Comic {
   static renderWithCatFilter(category) {
     let filterComics = Comic.all.filter(comic => comic.category == catFilter.value)
     return filterComics
-    // when user types in category into filter and hits enter => 
-    // return this if this.category === what is typed into category filter
   }
 
   // return random comic static function
@@ -45,4 +43,3 @@ class Comic {
 
 // all comics
 Comic.all = [];
-
