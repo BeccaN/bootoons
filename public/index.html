@@ -13,7 +13,7 @@
         <div class="bg-ground w-40 sm:w-64">
 
             <!-- logo/title -->
-            <h1 class="p-4 text-main text-5xl text-center font-body">bootoons</h1>
+            <h1 class="p-4 text-main text-5xl text-center font-mono">bootoons</h1>
             <!-- random comic button -->
             <div class="m-4">
                 <button id="random-comic-btn" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
@@ -26,17 +26,18 @@
                 <p class="text-sm">bootoons is a comic sharing application where users can peruse, upload and become inspired by other comic artists.</p>
             </div>
             <!-- category filter -->
-            <input type="text" list="cars" />
-            <datalist id="cars">
-                <option>Volvo</option>
-                <option>Saab</option>
-                <option>Mercedes</option>
-                <option>Audi</option>
-            </datalist>
-            <input type="submit" style="display: none" />
-
             <div class="m-4">
-                <input class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground" placeholder="category filter">
+                <select id="categories" onchange="filterHandler()" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground">
+                    <option value="" disabled selected hidden>categories</option>
+                    <option value="humor">humor
+                    <option value="scary">scary
+                    <option value="romance">romance
+                    <option value="slice of life">slice of life
+                    <option value="animal">animal
+                    <option value="cute">cute
+                    <option value="action">action
+                    <option value="mystery">mystery
+                </select>
             </div>
             <!-- form start -->
             <form action="#" method="POST" id="create-comic-form">

@@ -7,17 +7,24 @@ let moreComicTitle = document.getElementById("comic-more-title")
 let moreComicCat = document.getElementById("comic-more-cat")
 let moreComicDesc = document.getElementById("comic-more-desc")
 const randomComicBtn = document.getElementById("random-comic-btn")
+const catFilter = document.getElementById("categories")
 
 // --DOM Loads Event Listener-- //
 document.addEventListener('DOMContentLoaded', () => {
     getComics()
     // --Add submit event listener to 'New Comic Form'
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
-    // --Add 'category filter' event listener
-
     // --Add 'random comic' button event listener
     randomComicBtn.addEventListener('click', (e) => Comic.randomComic(e))
 })
+
+// --Add 'category filter' onchange event
+function filterHandler() {
+    comicCon.innerHTML = ''
+    Comic.renderWithCatFilter(catFilter.value).forEach(comic => {
+        comicCon.innerHTML += comic.renderComic()
+    })
+}
 
 // --Fetch for Comics Function-- //
 const getComics = function () {

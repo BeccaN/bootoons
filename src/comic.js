@@ -29,8 +29,9 @@ class Comic {
   }
 
   // category filter function
-  static renderWithCatFilter() {
-    Comic.renderWithCatFilter(category)
+  static renderWithCatFilter(category) {
+    let filterComics = Comic.all.filter(comic => comic.category == catFilter.value)
+    return filterComics
     // when user types in category into filter and hits enter => 
     // return this if this.category === what is typed into category filter
   }
