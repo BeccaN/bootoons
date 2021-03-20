@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
     // --Add 'random comic' button event listener
     randomComicBtn.addEventListener('click', (e) => Comic.randomComic(e))
+
 })
 
 // --Add 'category filter' onchange event
@@ -25,6 +26,8 @@ function filterHandler() {
     comicCon.innerHTML = ''
     Comic.renderWithCatFilter(catFilter.value).forEach(comic => {
         comicCon.innerHTML += comic.renderComic()
+        //--More Info Card Listener-- //
+        moreComicInfoEvent()
     })
 }
 
@@ -37,14 +40,8 @@ const getComics = function () {
                 let newComic = new Comic(comic)
                 comicCon.innerHTML += newComic.renderComic()
             })
-            // --More Info Card Listener-- //
-            const comicCards = document.querySelectorAll('#comic-card')
-            comicCards.forEach(function(i) {
-                i.addEventListener('click', function() {
-                    const selectComic = Comic.all.find(comic => comic.id === parseInt(i.dataset.id))
-                    selectComic.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc)
-                })
-            })
+            //--More Info Card Listener-- //
+            moreComicInfoEvent()
         })
         .then ((resp) => Comic.randomComic(resp))
 }
@@ -89,5 +86,16 @@ const postFetch = function (title, description, img_url, category_id) {
 const renderErrors = function (errors) {
     errors.forEach(error => {
         formErrorCon.innerHTML += `<li>${error}</li>`
+    })
+}
+
+// --More Comic Info Event-- //
+const moreComicInfoEvent = function () {
+    const comicCards = document.querySelectorAll('#comic-card')
+    comicCards.forEach(card => {
+        card.addEventListener("click", function(e) {
+            const selectComic = Comic.all.find(comic => comic.id === parseInt(e.target.parentElement.parentElement.dataset.id))
+            selectComic.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc)
+        })
     })
 }
