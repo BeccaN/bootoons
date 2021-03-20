@@ -11,11 +11,12 @@
     <div id="app" class="h-screen flex">
         <!-- Fixed sidebar -->
         <div class="bg-ground w-40 sm:w-64">
+
             <!-- logo/title -->
-            <h1 class="p-4 text-main text-5xl text-center font-body">bootoons</h1>
+            <h1 class="p-4 text-main text-5xl text-center font-mono">bootoons</h1>
             <!-- random comic button -->
             <div class="m-4">
-                <button class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
+                <button id="random-comic-btn" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono">
                     random comic
                 </button>
             </div>
@@ -26,7 +27,17 @@
             </div>
             <!-- category filter -->
             <div class="m-4">
-                <input class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground" placeholder="category filter">
+                <select id="categories" onchange="filterHandler()" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground">
+                    <option value="" disabled selected hidden>categories</option>
+                    <option value="humor">humor
+                    <option value="scary">scary
+                    <option value="romance">romance
+                    <option value="slice of life">slice of life
+                    <option value="animal">animal
+                    <option value="cute">cute
+                    <option value="action">action
+                    <option value="mystery">mystery
+                </select>
             </div>
             <!-- form start -->
             <form action="#" method="POST" id="create-comic-form">
@@ -62,7 +73,11 @@
                         </button>
                 </div>
             </form>
-            
+            <div class="m-4 rounded p-2 font-mono">
+                <ul id="form-errors" class="text-red-600">
+                  <!-- errors -->
+                </ul>
+            </div>
             <!-- form end -->
         </div>
         <!-- Scroll wrapper -->
@@ -71,7 +86,7 @@
             <div class="px-6 py-2 flex-1">
                 <!-- Comic More Info -->
                 <div id="comic-more-img" class="shadow text-center rounded my-10 overflow-hidden" v-for="i in 50">
-                    <img src="https://comicyears.com/wp-content/uploads/2019/12/seaostars.jpg" class="object-cover">
+                    <!-- img tag -->
                 </div>
                 <div id="comic-more-info" class="p-2 shadow rounded bg-accent">
                     <h1 id="comic-more-title" class="text-center font-bold text-xl text-ground font-mono">"testing title"</h1>

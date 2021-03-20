@@ -6,14 +6,26 @@ let moreComicImg = document.getElementById("comic-more-img")
 let moreComicTitle = document.getElementById("comic-more-title")
 let moreComicCat = document.getElementById("comic-more-cat")
 let moreComicDesc = document.getElementById("comic-more-desc")
+const randomComicBtn = document.getElementById("random-comic-btn")
+const catFilter = document.getElementById("categories")
+const formErrorCon = document.getElementById("form-errors")
 
 // --DOM Loads Event Listener-- //
 document.addEventListener('DOMContentLoaded', () => {
     getComics()
     // --Add submit event listener to 'New Comic Form'
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
-    // --Add 'category filter' event listener
+    // --Add 'random comic' button event listener
+    randomComicBtn.addEventListener('click', (e) => Comic.randomComic(e))
 })
+
+// --Add 'category filter' onchange event
+function filterHandler() {
+    comicCon.innerHTML = ''
+    Comic.renderWithCatFilter(catFilter.value).forEach(comic => {
+        comicCon.innerHTML += comic.renderComic()
+    })
+}
 
 // --Fetch for Comics Function-- //
 const getComics = function () {
@@ -23,7 +35,6 @@ const getComics = function () {
             comics.forEach(comic => {
                 let newComic = new Comic(comic)
                 comicCon.innerHTML += newComic.renderComic()
-                
             })
             // --More Info Card Listener-- //
             const comicCards = document.querySelectorAll('#comic-card')
@@ -33,9 +44,8 @@ const getComics = function () {
                     selectComic.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc)
                 })
             })
-
         })
-
+        .then ((resp) => Comic.randomComic(resp))
 }
 
 // --Form Handler Function For Post Fetch-- //
@@ -58,13 +68,25 @@ const postFetch = function (title, description, img_url, category_id) {
         body: JSON.stringify(comicData)
     })
     .then(resp => resp.json())
-    // .catch (err => console.log(err))
-    .then(comic => {
-        let newComic = new Comic(comic)
-        comicCon.innerHTML += newComic.renderComic(comic)
-        createComicForm.reload()
+    .catch(error => {
+        console.log(error)
     })
-    
-    
+    .then(comic => {
+        console.log(comic.errors)
+        if (comic.errors) {
+            renderErrors(comic.errors)
+        }
+        else {
+            let newComic = new Comic(comic)
+            comicCon.innerHTML += newComic.renderComic(comic)
+            location.reload()
+        }
+    })
 }
 
+// --Render Errors-- //
+const renderErrors = function (errors) {
+    errors.forEach(error => {
+        formErrorCon.innerHTML += `<li>${error}</li>`
+    })
+}
