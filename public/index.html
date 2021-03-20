@@ -29,43 +29,43 @@
             <div class="m-4">
                 <select id="categories" onchange="filterHandler()" class="bg-accent p-2 w-full text-center rounded font-bold text-2xl text-ground shadow font-mono placeholder-ground">
                     <option value="" disabled selected hidden>categories</option>
+                    <option value="superhero">superhero
+                    <option value="manga">manga
                     <option value="humor">humor
-                    <option value="scary">scary
-                    <option value="romance">romance
-                    <option value="slice of life">slice of life
-                    <option value="animal">animal
-                    <option value="cute">cute
-                    <option value="action">action
-                    <option value="mystery">mystery
+                    <option value="slice-of-life">slice-of-life
+                    <option value="non-fiction">non-fiction
+                    <option value="cutesy">cutesy
+                    <option value="sci-fi">sci-fi
+                    <option value="fantasy">fantasy
                 </select>
             </div>
             <!-- form start -->
-            <form action="#" method="POST" id="create-comic-form">
+            <form sci-fi="#" method="POST" id="create-comic-form">
                 <div class="bg-pop m-4 rounded p-2 font-mono shadow">
                         <h3 class="text-center text-2xl font-bold text-accent">+ new comic +</h3>
                         <!-- title -->
                         <div class="mt-2">
-                            <input type="text" name="comic_title" id="comic_title" class="bg-ground focus:ring-accent block w-full h-6 text-sm p-1 rounded placeholder-main text-main" placeholder="title">
+                            <input type="text" name="comic_title" id="comic_title" class="bg-ground focus:ring-accent block w-full h-6 text-sm p-1 rounded placeholder-filler text-main" placeholder="title">
                         </div>
                         <!-- description -->
                         <div class="mt-2">
-                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accent w-full text-sm rounded placeholder-main p-1 text-main" placeholder="description of comic..."></textarea>
+                            <textarea id="comic_desc" name="comic_desc" rows="3" class="bg-ground focus:ring-accent w-full text-sm rounded placeholder-filler p-1 text-main" placeholder="description of comic..."></textarea>
                         </div>
                         <!-- categories -->
-                        <select id="categories" name="categories" class="bg-ground text-main p-1 rounded w-full text-sm">
-                            <option value="" disabled selected>categories</option>
-                            <option value="1">humor</option>
-                            <option value="2">scary</option>
-                            <option value="3">romance</option>
-                            <option value="4">slice of life</option>
-                            <option value="5">animal</option>
-                            <option value="6">cute</option>
-                            <option value="7">action</option>
-                            <option value="8">mystery</option>
+                        <select id="categories" name="categories" class="bg-ground text-main p-1 rounded w-full text-sm text-filler">
+                            <option value="" disabled selected class="text-filler">categories</option>
+                            <option value="1">superhero</option>
+                            <option value="2">manga</option>
+                            <option value="3">humor</option>
+                            <option value="4">slice-of-life</option>
+                            <option value="5">non-fiction</option>
+                            <option value="6">cutesy</option>
+                            <option value="7">sci-fi</option>
+                            <option value="8">fantasy</option>
                         </select>
                         <!-- image -->
                         <div class="mt-2">
-                            <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-main text-main" placeholder="www.urlofnewcomic.com">
+                            <input type="text" name="comic_img" id="comic_img" class="text-sm w-full p-1 bg-ground focus:ring-accent w-full rounded placeholder-filler text-main" placeholder="www.urlofnewcomic.com">
                         </div>
                         <!-- submit -->
                         <button type="submit" class="bg-accent mt-2 w-full text-center rounded font-bold text-2xl text-ground font-mono">
