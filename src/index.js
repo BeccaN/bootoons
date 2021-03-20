@@ -1,4 +1,5 @@
 // MANTRA: When some event happens, I want to make what kind of fetch and then manipulate the DOM in what way?
+// --global variables-- //
 const mainUrl = "http://127.0.0.1:3000/"
 const comicCon = document.getElementById("comic-container")
 const createComicForm = document.getElementById("create-comic-form")
