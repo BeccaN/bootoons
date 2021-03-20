@@ -1,18 +1,34 @@
-* link to backend api
-* run rails migrate and rails seed
+# Bootoons 
 
-to do/stretch:
+Bootoons is a comic sharing single page application, where users can peruse and add different comics they find online. The purpose of this app is to help other comic artists become inspired and keep creating! 
 
-* fix the seeded data
+## Download and Installation Instructions
 
-* change placeholder text color to something more obvious
-* fix image fill in more comic info section
-* set max height on more comic info img
+Begin by cloning the [Bootoons API Repo](https://github.com/BeccaN/bootoons-api) and following the API instructions below.
 
-* error display/validations
+### API Instructions
+* After opening and changing into the API directory make sure to install all dependencies with
+```
+bundle install
+```
+* Make sure Postgresql server is running (follow instructions on how to start that based the machine you are using)
 
-Stretch:
-* make comic image an upload from computer
-* add 'likes' badge/attribute to comics
-* add comments/reactions (perhaps emoji reactions?)
-* ULTRA STRETCH: make a comic "series" aspect to the app, comics are part of a series that users are creating together. 
+* Run migrations and seed the database with
+```
+rails db:migrate && rails db:seed
+```
+* Start the bootoons server with 
+```
+rails s
+```
+
+### Frontend Instructions
+
+* Clone the Bootoons repository and install any dependencies with
+```
+npm install
+```
+
+* Open the index.html in a live server and start exploring! 
+
+The program is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
