@@ -14,6 +14,12 @@ module.exports = {
         body: ['Gochi Hand']
       }
     },
+    height: {
+      sm: '350px',
+      md: '425px',
+      lg: '475px',
+      xl: '500px'
+    }
   },
   variants: {
     extend: {},

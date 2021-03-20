@@ -22,7 +22,7 @@ class Comic {
 
   // more comic info function
   renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc) {
-    moreComicImg.innerHTML = `<img src="${this.img_url}" class="object-cover">`
+    moreComicImg.innerHTML = `<img src="${this.img_url}" class="w-full h-xl object-contain">`
     moreComicTitle.innerText = `"${this.title.toLowerCase()}"`
     moreComicCat.innerText = this.category
     moreComicDesc.innerText = this.description.toLowerCase()

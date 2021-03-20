@@ -1,5 +1,5 @@
 to do:
-* add placeholder text color
+
 * fix height issue on image (custom heights?)
 
 Stretch:
