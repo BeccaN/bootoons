@@ -14,7 +14,7 @@ class Comic {
     return `
     <div id="comic-card" data-id="${this.id}" class="relative m-5">
         <div class="bg-main rounded overflow-hidden shadow">
-            <img src="${this.img_url}" class="w-full h-72 object-cover">
+            <img src="${this.img_url}" class="w-full h-sm object-cover">
         </div>
     </div>
     `;
