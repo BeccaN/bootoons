@@ -42,8 +42,8 @@ const getComics = function () {
             })
             //--More Info Card Listener-- //
             moreComicInfoEvent()
-            //--Like Listener--//
-            likeButtonEvent()
+            //--Like Listener--code challenge--//
+            // likeButtonEvent()
         })
         .then ((resp) => Comic.randomComic(resp))
 }
