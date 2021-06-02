@@ -31865,6 +31865,25 @@ video {
           animation: bounce 1s infinite;
 }
 
+.scrollbar-hide{
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+/* Chrome, Safari and Opera */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -63097,6 +63116,17 @@ video {
   .sm\:animate-bounce{
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  /* Chrome, Safari and Opera */
+
+  .sm\:no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sm\:no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 
@@ -94333,6 +94363,17 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  /* Chrome, Safari and Opera */
+
+  .md\:no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .md\:no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
 
 @media (min-width: 1024px){
@@ -125567,6 +125608,17 @@ video {
   .lg\:animate-bounce{
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  /* Chrome, Safari and Opera */
+
+  .lg\:no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lg\:no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 
@@ -156803,6 +156855,17 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  /* Chrome, Safari and Opera */
+
+  .xl\:no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .xl\:no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
 
 @media (min-width: 1536px){
@@ -188037,5 +188100,16 @@ video {
   .\32xl\:animate-bounce{
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  /* Chrome, Safari and Opera */
+
+  .\32xl\:no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .\32xl\:no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }

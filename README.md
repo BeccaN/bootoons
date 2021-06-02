@@ -29,6 +29,6 @@ rails s
 npm install
 ```
 
-* Open the index.html in a live server and start exploring! 
+* Open the public/index.html in a live server and start exploring! 
 
 The program is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

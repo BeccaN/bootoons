@@ -102,14 +102,14 @@ const moreComicInfoEvent = function () {
     })
 }
 
-//--Like Button--//
-const likeButtonEvent = function() {
-    const likeButton = document.querySelectorAll('#like-button')
-    likeButton.forEach(like => {
-        like.addEventListener("click", function(e){
-            button = like.innerText.split(" ")
-            likeNum = parseInt(button[1]) + 1
-            like.innerText = "Likes " + likeNum
-        })
-    })
-}
+//--Like Button--code challenge--//
+// const likeButtonEvent = function() {
+//     const likeButton = document.querySelectorAll('#like-button')
+//     likeButton.forEach(like => {
+//         like.addEventListener("click", function(e){
+//             button = like.innerText.split(" ")
+//             likeNum = parseInt(button[1]) + 1
+//             like.innerText = "Likes " + likeNum
+//         })
+//     })
+// }

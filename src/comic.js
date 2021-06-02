@@ -10,12 +10,12 @@ class Comic {
   }
 
   //render comic function
+  // <button data-id="${this.id}" type="button" id="like-button">Likes 0</button>
   renderComic() {
     return `
     <div id="comic-card" data-id="${this.id}" class="relative m-5">
         <div class="bg-main rounded overflow-hidden shadow">
             <img src="${this.img_url}" class="w-full h-sm object-cover">
-            <button data-id="${this.id}" type="button" id="like-button">Likes 0</button>
         </div>
     </div>
     `;
