@@ -11,6 +11,7 @@ const randomComicBtn = document.getElementById("random-comic-btn")
 const catFilter = document.getElementById("categories")
 const formErrorCon = document.getElementById("form-errors")
 
+
 // --DOM Loads Event Listener-- //
 document.addEventListener('DOMContentLoaded', () => {
     getComics()
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createComicForm.addEventListener("submit", (e) => createFormHandler(e))
     // --Add 'random comic' button event listener
     randomComicBtn.addEventListener('click', (e) => Comic.randomComic(e))
-
 })
 
 // --Add 'category filter' onchange event
@@ -42,6 +42,8 @@ const getComics = function () {
             })
             //--More Info Card Listener-- //
             moreComicInfoEvent()
+            //--Like Listener--//
+            likeButtonEvent()
         })
         .then ((resp) => Comic.randomComic(resp))
 }
@@ -96,6 +98,18 @@ const moreComicInfoEvent = function () {
         card.addEventListener("click", function(e) {
             const selectComic = Comic.all.find(comic => comic.id === parseInt(e.target.parentElement.parentElement.dataset.id))
             selectComic.renderMoreInfo(moreComicImg, moreComicTitle, moreComicCat, moreComicDesc)
+        })
+    })
+}
+
+//--Like Button--//
+const likeButtonEvent = function() {
+    const likeButton = document.querySelectorAll('#like-button')
+    likeButton.forEach(like => {
+        like.addEventListener("click", function(e){
+            button = like.innerText.split(" ")
+            likeNum = parseInt(button[1]) + 1
+            like.innerText = "Likes " + likeNum
         })
     })
 }
