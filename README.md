@@ -2,6 +2,8 @@
 
 Bootoons is a comic sharing single page application, where users can peruse and add different comics they find online. The purpose of this app is to help other comic artists become inspired and keep creating! 
 
+[Demo Guide](https://www.youtube.com/watch?v=crQeSL-C_N0&t=14s)
+
 ## Download and Installation Instructions
 
 Begin by cloning the [Bootoons API Repo](https://github.com/BeccaN/bootoons-api) and following the API instructions below.
